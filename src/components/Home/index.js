@@ -52,6 +52,16 @@ function Home() {
           <TeamCard key={eachObj.id} teamDetails={eachObj} />
         ))}
       </ul>
+      <div className={open ? 'floatingContainer' : 'closing'}>
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(!open)
+          }}
+        >
+          open
+        </button>
+      </div>
     </div>
   )
 

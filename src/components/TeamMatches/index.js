@@ -87,7 +87,7 @@ function TeamMatches(props) {
       />
       <LatestMatch latestMatchDetailsObj={latestMatchDetailsObj} />
       <div className="recentMatchesContainer">
-        <ul>
+        <ul className="recentMatchesList">
           {recentMatchDetailsList.map(eachObj => (
             <MatchCard key={eachObj.id} eachMatchDetails={eachObj} />
           ))}
