@@ -1,1 +1,18 @@
-/* Write your CSS here */
+.TeamMatchesContainer {
+  width: 100vw;
+  background-color: red;
+}
+
+.latestMatchDetailsContainer {
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #1e293b;
+}
+
+.latestMatchImageUrl {
+  height: 120px;
+  width: 120px;
+}
