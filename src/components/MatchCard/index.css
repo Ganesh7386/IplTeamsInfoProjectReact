@@ -1,4 +1,31 @@
 .competingteamLogoImg {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
+}
+
+.eachMatchCardContainer {
+  background-color: #1e293b;
+  height: 300px;
+  width: 250px;
+  max-width: 300px;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+}
+
+.eachMatchCardContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lostStyling {
+  color: red;
+}
+
+.wonStyling {
+  color: #18ed66;
 }

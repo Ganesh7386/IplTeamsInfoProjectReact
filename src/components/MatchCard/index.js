@@ -1,7 +1,7 @@
 import './index.css'
 
 const MatchCard = ({eachMatchDetails}) => (
-  <li>
+  <li className="eachMatchCardContainer">
     <div>
       <img
         src={eachMatchDetails.competingTeamLogo}
@@ -10,7 +10,13 @@ const MatchCard = ({eachMatchDetails}) => (
       />
       <p>{eachMatchDetails.competingTeam}</p>
       <p>{eachMatchDetails.result}</p>
-      <p>{eachMatchDetails.matchStatus}</p>
+      <p
+        className={
+          eachMatchDetails.matchStatus === 'Lost' ? 'lostStyling' : 'wonStyling'
+        }
+      >
+        {eachMatchDetails.matchStatus}
+      </p>
     </div>
   </li>
 )

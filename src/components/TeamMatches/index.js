@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch/index'
 import MatchCard from '../MatchCard/index'
 import './index.css'
@@ -42,11 +43,11 @@ function TeamMatches(props) {
   const [latestMatchDetailsObj, setLatestMatchDetailsObj] = useState({})
   const [teamPhotoUrl, setTeamPhotoUrl] = useState('')
   const [recentMatchDetailsList, setRecentMatchDetailsList] = useState([])
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState('true')
 
   useState(() => {
     const makeApiCall = async () => {
-      setLoading(true)
+      setLoading('true')
       const {match} = props
       const {params} = match
       const {id} = params
@@ -70,6 +71,7 @@ function TeamMatches(props) {
         const recentMatches = formatRecentMatches(responseJson.recent_matches)
         setRecentMatchDetailsList(recentMatches)
         console.log(recentMatches)
+        setLoading('false')
       } catch (e) {
         console.log(e.message)
       }
@@ -78,15 +80,15 @@ function TeamMatches(props) {
     makeApiCall()
   }, [])
 
-  return (
+  const renderSuccessfullUi = () => (
     <div className="TeamMatchesContainer">
       <img
         src={teamPhotoUrl}
         alt="eachTeamLogo"
-        style={{height: '300px', width: '400px'}}
+        style={{height: '300px', width: '100%'}}
       />
       <LatestMatch latestMatchDetailsObj={latestMatchDetailsObj} />
-      <div className="recentMatchesContainer">
+      <div>
         <ul className="recentMatchesList">
           {recentMatchDetailsList.map(eachObj => (
             <MatchCard key={eachObj.id} eachMatchDetails={eachObj} />
@@ -95,5 +97,47 @@ function TeamMatches(props) {
       </div>
     </div>
   )
+
+  const renderLoadingUi = () => (
+    <div className="overAllLoadingUi">
+      <div className="loadingContainerTop">{}</div>
+      <div className="loadingContainerTopMiddle">{}</div>
+      <div className="loadingContainerBottomCardsEffect">
+        <ul className="recentMatchesList">
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+          <li className="eachMatchCardLoadingContainer">
+            <div>{}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+
+  const renderUiAccordToLoadingStatus = () => {
+    switch (isLoading) {
+      case 'true':
+        return renderLoadingUi()
+      case 'false':
+        return renderSuccessfullUi()
+      default:
+        return null
+    }
+  }
+
+  return renderUiAccordToLoadingStatus()
 }
 export default TeamMatches

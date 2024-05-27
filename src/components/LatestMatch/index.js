@@ -1,3 +1,5 @@
+import './index.css'
+
 const LatestMatch = ({latestMatchDetailsObj}) => (
   <div className="latestMatchDetailsContainer">
     <div className="leftContainer">
