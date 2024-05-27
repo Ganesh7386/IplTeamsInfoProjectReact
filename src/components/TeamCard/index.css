@@ -7,7 +7,7 @@
   height: 170px;
   width: 200px;
   background-color: white;
-  opacity: 0.7;
+  opacity: 0.5;
   border: 5px solid white;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -23,6 +23,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.innerDetailsOfTeamCardContainer p {
+  font-weight: 700;
+  margin-left: 6px;
 }
 
 @media (min-width: 0px) and (max-width: 576px) {
