@@ -1,5 +1,5 @@
 .TeamMatchesContainer {
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(to bottom, #a4261d, #0f172a);
   padding: 20px;
 }
