@@ -1,21 +1,7 @@
 .TeamMatchesContainer {
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(to bottom, #a4261d, #0f172a);
   padding: 20px;
-}
-
-.latestMatchDetailsContainer {
-  width: 100%;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #1e293b;
-}
-
-.latestMatchImageUrl {
-  height: 300px;
-  width: 60%;
 }
 
 .recentMatchesList {

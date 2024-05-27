@@ -1,12 +1,35 @@
+import {FaMapMarkerAlt} from 'react-icons/fa'
+
+import {
+  MdGroup,
+  MdDateRange,
+  MdDone,
+  MdCheckCircle,
+  MdPerson,
+  MdSportsCricket,
+} from 'react-icons/md'
+
 import './index.css'
 
 const LatestMatch = ({latestMatchDetailsObj}) => (
   <div className="latestMatchDetailsContainer">
     <div className="leftContainer">
-      <p>{latestMatchDetailsObj.competingTeam}</p>
-      <p>{latestMatchDetailsObj.date}</p>
-      <p>{latestMatchDetailsObj.venue}</p>
-      <p>{latestMatchDetailsObj.result}</p>
+      <div>
+        <MdGroup size={30} />
+        <p>{latestMatchDetailsObj.competingTeam}</p>
+      </div>
+      <div>
+        <MdDateRange size={30} />
+        <p>{latestMatchDetailsObj.date}</p>
+      </div>
+      <div>
+        <FaMapMarkerAlt size={30} />
+        <p>{latestMatchDetailsObj.venue}</p>
+      </div>
+      <div>
+        <MdCheckCircle size={30} />
+        <p>{latestMatchDetailsObj.result}</p>
+      </div>
     </div>
     <img
       src={latestMatchDetailsObj.competingTeamLogo}
@@ -14,13 +37,25 @@ const LatestMatch = ({latestMatchDetailsObj}) => (
       alt="opponentImage"
     />
     <div className="rightContainer">
-      <p>First Innings</p>
+      <div>
+        <MdSportsCricket size={30} />
+        <p>First Innings</p>
+      </div>
       <p>{latestMatchDetailsObj.firstInnings}</p>
-      <p>Second Innings</p>
+      <div>
+        <MdSportsCricket size={30} />
+        <p>Second Innings</p>
+      </div>
       <p>{latestMatchDetailsObj.secondInnings}</p>
-      <p>Man of the Match</p>
+      <div>
+        <MdPerson size={30} />
+        <p>Man of the Match</p>
+      </div>
       <p>{latestMatchDetailsObj.manOfTheMatch}</p>
-      <p>Umpires</p>
+      <div>
+        <MdPerson size={30} />
+        <p>Umpires</p>
+      </div>
       <p>{latestMatchDetailsObj.umpires}</p>
     </div>
   </div>
