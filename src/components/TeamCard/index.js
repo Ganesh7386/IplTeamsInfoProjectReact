@@ -9,17 +9,17 @@ function TeamCard(props) {
 
   return (
     <li className="eachHomeRouteTeamCardContainerListItem">
-      <div className="eachHomeRouteTeamCardContainer">
-        <Link
-          to={`/team-matches/${id}`}
-          style={{color: 'inherit', textDecoration: 'none'}}
-        >
+      <Link
+        to={`/team-matches/${id}`}
+        style={{color: 'inherit', textDecoration: 'none'}}
+      >
+        <div className="eachHomeRouteTeamCardContainer">
           <div className="innerDetailsOfTeamCardContainer">
             <img src={teamImageUrl} className="eachTeamImage" alt={name} />
             <p>{name}</p>
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </li>
   )
 }
